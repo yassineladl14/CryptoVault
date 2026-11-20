@@ -2,6 +2,10 @@
 
 CryptoVault is a responsive cryptocurrency dashboard built with HTML and CSS. It brings portfolio information, market data, and wallet tools together in a clean dark interface.
 
+## Live Demo
+
+[Open CryptoVault](https://yassineladl14.github.io/CryptoVault/)
+
 ## Features
 
 - Dashboard with portfolio statistics, BTC/USD and ETH/USD price cards, asset allocation, portfolio health, and risk level
