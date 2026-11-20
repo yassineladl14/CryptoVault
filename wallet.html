@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wallet - CryptoVault</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <a class="brand" href="dashboard.html"><span class="brand-mark">CV</span>CryptoVault</a>
+            <div class="nav-group">
+                <div class="nav-label">MAIN MENU</div>
+                <a class="nav-link" href="dashboard.html"><span class="ico">▦</span>Dashboard</a><a class="nav-link"
+                    href="markets.html"><span class="ico">⌁</span>Markets</a><a class="nav-link active"
+                    href="wallet.html"><span class="ico">▣</span>Wallet</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-label">ACCOUNT</div>
+                <a class="nav-link" href="settings.html"><span class="ico">⚙</span>Settings</a>
+            </div>
+            <div class="side-bottom">
+                <div class="mode">
+                    <span class="mode-icon">☼</span><span>Light Mode</span><input class="switch" type="checkbox"
+                        aria-label="Light Mode" />
+                </div>
+                <a class="logout" href="auth.html#login">↪ &nbsp; Logout</a>
+            </div>
+        </aside>
+        <!-- PAGE CONTENT STARTS HERE -->
+        <main class="main">
+            <details class="mobile-menu">
+                <summary aria-label="Toggle menu">☰</summary>
+                <a class="mobile-settings" href="settings.html" aria-label="Settings">Settings</a>
+                <nav>
+                    <a href="dashboard.html">▦ Dashboard</a><a href="markets.html">⌁ Markets</a><a href="wallet.html">▣
+                        Wallet</a><a href="settings.html">⚙ Settings</a><a href="auth.html#login">↪ Logout</a>
+                </nav>
+            </details>
+            <header class="page-head">
+                <div>
+                    <h1>Wallet</h1>
+                    <p>Manage your crypto assets and transactions</p>
+                </div>
+                <div class="head-actions">
+                    <input class="search" type="search" placeholder="⌕  Search..." /><button class="icon-btn"
+                        aria-label="Notifications">
+                        ♧<span class="badge">3</span></button><span class="avatar">AM</span>
+                </div>
+            </header>
+            <section class="grid grid-3">
+                <article class="card balance-card">
+                    <div class="stat">
+                        <span class="stat-icon">▱</span>
+                        <div>
+                            <div class="stat-label">Total Balance</div>
+                            <div class="stat-value">$84,254.32</div>
+                            <div class="stat-note positive">
+                                ↗ $2,847.50 (3.5%) this month
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">◉</span>
+                        <div>
+                            <div class="stat-label">Staked Assets</div>
+                            <div class="stat-value">$12,450.00</div>
+                            <div class="stat-note muted">Earning 8.2% APY</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">✧</span>
+                        <div>
+                            <div class="stat-label">Total Rewards</div>
+                            <div class="stat-value">$1,024.80</div>
+                            <div class="stat-note positive">+$45.20 this week</div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <nav class="wallet-actions">
+                <a class="button primary" href="#receive">↓ Deposit</a><a class="button" href="#transactions">↑
+                    Withdraw</a><a class="button" href="#wallets">⇄ Swap</a><a class="button" href="#staking">◉
+                    Stake</a>
+            </nav>
+            <section class="grid grid-2 wallet-overview">
+                <article class="card" id="wallets">
+                    <div class="card-head">
+                        <h2>Your Wallets</h2>
+                        <a href="#wallets" class="button">＋ Add Wallet</a>
+                    </div>
+                    <div class="wallet-list">
+                        <div class="wallet-row">
+                            <span class="coin-dot">₿</span>
+                            <div class="asset-name">
+                                <strong>Bitcoin</strong>
+                            </div>
+                            <div class="asset-amount">
+                                <strong>0.8542 BTC</strong><small>$36,942.50</small>
+                            </div>
+                            <button aria-label="Bitcoin wallet options">•••</button>
+                        </div>
+                        <div class="wallet-row">
+                            <span class="coin-dot">Ξ</span>
+                            <div class="asset-name">
+                                <strong>Ethereum</strong>
+                            </div>
+                            <div class="asset-amount">
+                                <strong>12.45 ETH</strong><small>$28,442.25</small>
+                            </div>
+                            <button aria-label="Ethereum wallet options">•••</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="card address-box" id="receive">
+                    <div class="card-head">
+                        <h2>Receive Bitcoin</h2>
+                        <span class="tag">BTC</span>
+                    </div>
+                    <div class="qr" aria-label="QR code illustration"></div>
+                    <p class="muted small">Your Bitcoin address</p>
+                    <div class="wallet-address">
+                        bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
+                    </div>
+                    <div class="inline-actions centered-actions">
+                        <button>▢ Copy</button><button>↗ Share</button>
+                    </div>
+                </article>
+            </section>
+            <section class="grid grid-2">
+                <article class="card" id="staking">
+                    <div class="card-head">
+                        <h2>Staking Opportunities</h2>
+                        <a class="accent" href="#staking">View All</a>
+                    </div>
+                    <div class="stake-list">
+                        <div class="stake-row">
+                            <span class="coin-dot">Ξ</span>
+                            <div class="asset-name">
+                                <strong>Ethereum 2.0</strong><small>Staked 4.5 ETH · Rewards 0.234 ETH</small>
+                            </div>
+                            <div class="staking-rate">
+                                <strong>5.2% APY</strong><button class="small">Manage Stake</button>
+                            </div>
+                        </div>
+                        <div class="stake-row">
+                            <span class="coin-dot">◎</span>
+                            <div class="asset-name">
+                                <strong>Solana</strong><small>Staked 25 SOL · Rewards 1.95 SOL</small>
+                            </div>
+                            <div class="staking-rate">
+                                <strong>7.8% APY</strong><button class="small">Manage Stake</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card" id="transactions">
+                    <div class="card-head">
+                        <h2>Transaction History</h2>
+                        <a href="#transactions" class="button">⇩ Export</a>
+                    </div>
+                    <div class="tx-list">
+                        <div class="tx">
+                            <span class="tx-icon">↓</span>
+                            <div class="tx-info">
+                                <div class="tx-title">Deposit BTC</div>
+                                <div class="tx-sub">Today, 2:45 PM</div>
+                            </div>
+                            <div class="tx-amount positive">
+                                +0.0567 BTC
+                                <div class="tx-sub">Completed</div>
+                            </div>
+                        </div>
+                        <div class="tx">
+                            <span class="tx-icon">↑</span>
+                            <div class="tx-info">
+                                <div class="tx-title">Withdraw ETH</div>
+                                <div class="tx-sub">Yesterday, 11:20 AM</div>
+                            </div>
+                            <div class="tx-amount">
+                                -0.805 ETH
+                                <div class="tx-sub">Completed</div>
+                            </div>
+                        </div>
+                        <div class="tx">
+                            <span class="tx-icon">◉</span>
+                            <div class="tx-info">
+                                <div class="tx-title">Stake SOL</div>
+                                <div class="tx-sub">Dec 28, 4:15 PM</div>
+                            </div>
+                            <div class="tx-amount">
+                                -25.00 SOL
+                                <div class="tx-sub accent">Pending</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <footer>
+                Copyright © 2026 CryptoVault. Designed by <a href="#">TemplateMo</a>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

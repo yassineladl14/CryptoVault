@@ -1,0 +1,1934 @@
+/* Shared foundation: colors, typography, buttons, and form controls */
+:root {
+  --background: #1d1e20;
+  --sidebar: #191a1c;
+  --card: #292a2c;
+  --border: #38393b;
+  --text: #f5f4f2;
+  --muted: #a3a3a5;
+  --gold: #e8a85f;
+  --green: #44c995;
+  --red: #ed7272;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial,
+    sans-serif;
+  font-size: 0.9375rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6875rem 0.9375rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.625rem;
+  background: #303133;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  border-color: #777;
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem 0.875rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.5625rem;
+  background: #242527;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0.0625rem solid var(--gold);
+}
+
+/* Shared page sidebar, header, and main content area */
+.shell {
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  width: 16.25rem;
+  padding: 2rem 1.5rem;
+  border-right: 0.0625rem solid #2b2c2e;
+  background: var(--sidebar);
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 0.75rem;
+  background-color: var(--gold);
+  color: #25201a;
+  box-shadow: 0 0.25rem 1.125rem #d3965a55;
+}
+
+.nav-group {
+  margin-bottom: 1.75rem;
+}
+
+.nav-label {
+  margin: 0 0 0.6rem 0.7rem;
+  color: #77787a;
+  font-size: 0.75rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0.18rem 0;
+  padding: 0.93rem 1.06rem;
+  border-radius: 0.75rem;
+  color: #a4a4a6;
+  font-size: 1.12rem;
+}
+
+.nav-link .ico {
+  width: 1.37rem;
+  text-align: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: linear-gradient(110deg, #e7ae6a, #c99361);
+  color: #25201a;
+  box-shadow: 0 0.3125rem 1.125rem #d1965b35;
+}
+
+.side-bottom {
+  margin-top: auto;
+}
+
+.mode,
+.side-user {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1.5625rem 0.5rem 0.9375rem;
+  border-top: 0.0625rem solid #303133;
+  color: #b8b8ba;
+}
+
+.mode-icon {
+  font-size: 1.25rem;
+}
+
+.mode .switch {
+  margin-left: auto;
+}
+
+.switch {
+  position: relative;
+  width: 2.625rem;
+  height: 1.5rem;
+  appearance: none;
+  border-radius: 1.25rem;
+  background: #555;
+  cursor: pointer;
+}
+
+.switch:checked {
+  background: var(--gold);
+}
+
+.switch::after {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: white;
+  content: "";
+}
+
+.switch:checked::after {
+  left: 1.3125rem;
+}
+
+.side-user {
+  padding: 0.8125rem 0.5625rem 0.3125rem;
+}
+
+.avatar {
+  display: grid;
+  width: 2.4375rem;
+  height: 2.4375rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  background: linear-gradient(135deg, #f1c288, #bc8050);
+  color: #35281b;
+  font-weight: bold;
+}
+
+.user-name {
+  font-weight: 600;
+}
+
+.user-role {
+  margin-top: 0.125rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.logout {
+  display: block;
+  margin: 0.5rem 0.5rem 0;
+  padding: 0.875rem 0.5rem;
+  color: #ce858b;
+  font-size: 1rem;
+}
+
+.main {
+  width: calc(100% - 16.25rem);
+  max-width: 106.25rem;
+  margin-left: 16.25rem;
+  min-width: 0;
+  padding: 2.25rem 2.5rem 1.75rem;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5625rem;
+}
+
+.page-head h1 {
+  margin: 0 0 0.4375rem;
+  font-size: 1.875rem;
+}
+
+.page-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.search {
+  width: 14.6875rem;
+}
+
+.icon-btn {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.badge {
+  position: absolute;
+  top: -0.3125rem;
+  right: -0.1875rem;
+  display: grid;
+  width: 1.125rem;
+  height: 1.125rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #261f17;
+  font-size: 0.6875rem;
+}
+
+/* Shared cards and grid layout */
+.card {
+  margin-bottom: 1.25rem;
+  padding: 1.75rem;
+  border: 0.0625rem solid #38383a;
+  border-radius: 1rem;
+  background: #2b2b2d;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.125rem;
+}
+
+.card h2,
+.card h3 {
+  margin: 0;
+  font-size: 1.1875rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.market-table-card {
+  margin: 1.5rem 0;
+}
+.main:has(.wallet-actions) > section.grid.grid-2:not(.wallet-overview) {
+  margin: 1.5rem 0;
+}
+
+.grid > *,
+.dashboard-stats > *,
+.dashboard-prices > *,
+.dashboard-summary > * {
+  min-width: 0;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* PAGE: Dashboard — summary cards, prices, and portfolio overview */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.dashboard-prices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.125rem;
+}
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.125rem;
+}
+
+.dashboard-stats > .card,
+.dashboard-prices > .card,
+.dashboard-summary > .card,
+.grid > .card {
+  margin-bottom: 0;
+}
+
+.profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.price-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  min-height: 12rem;
+
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+.price-info {
+  min-width: 0;
+}
+
+.price-title {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.price-value {
+  margin: 0.75rem 0 0.3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.price-change {
+  font-size: 1.25rem;
+}
+
+.price-sparkline {
+  flex: 0 1 38%;
+  width: 38%;
+  min-width: 4.375rem;
+  height: 3.125rem;
+}
+
+@media (max-width: 47.5rem) {
+  .price-sparkline {
+    flex-basis: 32%;
+    width: 32%;
+    min-width: 3.25rem;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 23rem) {
+  .price-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .price-sparkline {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: 8rem;
+    object-fit: fill;
+  }
+}
+
+.summary-card {
+  flex: 0 0 4.875rem;
+  min-width: 0;
+  margin: 0 0 1.25rem;
+}
+
+.allocation-layout {
+  display: grid;
+  grid-template-columns: 8.75rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.875rem;
+}
+
+.donut span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding-top: 3.9375rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.legend-color.purple {
+  background: #8b78d6;
+}
+
+.legend-color.teal {
+  background: #58b4bb;
+}
+
+.summary-meter {
+  display: flex;
+  flex: 0 0 4.875rem;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.summary-meter p {
+  margin: 0.375rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.risk-ring {
+  position: relative;
+  display: grid;
+  flex: 0 0 6rem;
+  aspect-ratio: 1;
+  width: 6rem;
+  height: 6rem;
+  place-items: center;
+  border-radius: 100%;
+  background: conic-gradient(var(--gold) 0 35%, #464749 35%);
+  font-weight: bold;
+}
+
+.risk-ring span {
+  color: #fff;
+  z-index: 1;
+  font-size: 1.125rem;
+  text-shadow: 0 1px 2px #000;
+}
+
+.muted,
+.stat-label {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.75rem;
+}
+
+.positive {
+  color: var(--green);
+}
+
+.negative {
+  color: var(--red);
+}
+
+.accent {
+  color: var(--gold);
+}
+
+.stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.stat-icon {
+  display: grid;
+  width: 2.6875rem;
+  height: 2.6875rem;
+  place-items: center;
+  border-radius: 0.75rem;
+  background: #393633;
+  color: var(--gold);
+  font-size: 1.1875rem;
+}
+
+.stat-value {
+  margin: 0.375rem 0;
+  font-size: 1.4375rem;
+  font-weight: bold;
+}
+
+.stat-note {
+  margin-top: 0.4375rem;
+  font-size: 0.75rem;
+}
+
+.chart-tabs,
+.pills {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.chart-tabs a,
+.pills a,
+.pills button {
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: none;
+  color: #929295;
+  font-size: 0.8125rem;
+}
+
+.chart-tabs .selected,
+.pills .selected {
+  background: var(--gold);
+  color: #2e261e;
+}
+
+.chart {
+  position: relative;
+  height: 13.75rem;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 3rem,
+    #3a3b3d 3.0625rem,
+    #3a3b3d 3.125rem
+  );
+}
+
+.bar-chart {
+  height: 12.8125rem;
+  margin-top: 1.125rem;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2.6875rem,
+    #3a3b3d 2.75rem,
+    #3a3b3d 2.8125rem
+  );
+}
+
+.bar-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chart svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.axis {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  color: #858588;
+  font-size: 0.6875rem;
+}
+
+.perf-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.perf {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 0.625rem;
+  background: #303133;
+  font-size: 0.8125rem;
+}
+
+/* Shared components: coins, charts, and transaction lists */
+.coin-dot {
+  display: inline-grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  margin-right: 0.5625rem;
+  border-radius: 50%;
+  background: #363332;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.market-card {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+/* Keep both cards in this row the same height. */
+.price-pair-card {
+  min-height: 0;
+}
+
+.price-pair-card .grid-2 {
+  align-items: start;
+}
+
+.market-price {
+  margin: 0.5625rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.mini-chart {
+  width: 100%;
+  height: 2.125rem;
+  margin-top: 0.625rem;
+}
+
+.donut {
+  position: relative;
+  width: 9.25rem;
+  height: 9.25rem;
+  margin: 0.5rem auto 1.125rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    #e8a85f 0 40%,
+    #8b78d6 40% 65%,
+    #58b4bb 65% 85%,
+    #67686b 85%
+  );
+}
+
+.donut::after {
+  position: absolute;
+  inset: 1.6875rem;
+  border-radius: 50%;
+  background: var(--card);
+  content: "";
+}
+
+.legend {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #c7c7c8;
+  font-size: 0.8125rem;
+}
+
+.legend-row strong {
+  margin-left: auto;
+}
+.legend-color {
+  width: 0.5625rem;
+  height: 0.5625rem;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.health {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+}
+
+.health-ring {
+  position: relative;
+  display: grid;
+  flex: 0 0 6rem;
+  aspect-ratio: 1;
+  width: 6rem;
+  height: 6rem;
+  place-items: center;
+  border-radius: 100%;
+  background: conic-gradient(var(--green) 0 85%, #464749 85%);
+  font-weight: bold;
+}
+
+.health-ring span {
+  color: #fff;
+  z-index: 1;
+  font-size: 1.125rem;
+  text-shadow: 0 1px 2px #000;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.row-between {
+  justify-content: space-between;
+}
+
+.centered-actions {
+  justify-content: center;
+}
+
+.tx-list,
+.wallet-list,
+.stake-list {
+  display: grid;
+}
+
+.tx,
+.wallet-row,
+.stake-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 0;
+  border-top: 0.0625rem solid var(--border);
+}
+
+.tx:first-child,
+.wallet-row:first-child,
+.stake-row:first-child {
+  border-top: 0;
+}
+
+.tx-icon {
+  display: grid;
+  width: 2.3125rem;
+  height: 2.3125rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #37383a;
+  color: var(--gold);
+}
+
+.tx-info {
+  flex: 1;
+}
+
+.tx-title {
+  font-weight: 600;
+}
+
+.tx-sub {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.tx-amount {
+  font-weight: 600;
+}
+
+.asset-name {
+  flex: 1;
+}
+
+.asset-name strong,
+.asset-amount strong {
+  display: block;
+}
+
+.asset-name small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+.asset-amount {
+  text-align: right;
+}
+
+.asset-amount small {
+  color: var(--muted);
+}
+
+/* Wallet rows on narrow screens */
+@media (max-width: 47.5rem) {
+  .wallet-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-overview #wallets .wallet-row {
+    display: grid;
+    grid-template-columns: 2rem minmax(4.5rem, 1fr) auto 2.75rem;
+    gap: 0.5rem;
+  }
+
+  .wallet-overview #wallets .coin-dot {
+    margin-right: 0;
+  }
+
+  .wallet-overview #wallets .asset-name {
+    min-width: 0;
+  }
+
+  .wallet-overview #wallets .asset-name strong {
+    white-space: nowrap;
+  }
+
+  .wallet-overview #wallets .asset-amount {
+    white-space: nowrap;
+  }
+
+  .wallet-overview #wallets .wallet-row > button {
+    width: 2.75rem;
+    min-width: 0;
+    padding: 0.625rem 0;
+  }
+}
+
+/* PAGE: Wallet — actions, balance, address, and staking details */ /* Put each wallet name above its balance and options on narrow screens */
+@media (max-width: 47.5rem) {
+  .wallet-overview #wallets .wallet-row {
+    grid-template-columns: 2.75rem minmax(0, 1fr) 2.75rem;
+    grid-template-rows: auto auto;
+  }
+
+  .wallet-overview #wallets .coin-dot {
+    grid-row: 1 / 3;
+  }
+
+  .wallet-overview #wallets .asset-name {
+    grid-column: 2 / 4;
+    grid-row: 1;
+  }
+
+  .wallet-overview #wallets .asset-amount {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .wallet-overview #wallets .wallet-row > button {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+
+/* PAGE: Wallet — actions, balance, address, and staking details */
+.wallet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin: 1.5rem 0;
+}
+
+.wallet-overview {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.balance-card {
+  border-color: transparent;
+  background: linear-gradient(120deg, #e4ad6d, #c78e5c);
+  color: #241f1b;
+}
+
+.balance-card .stat-icon {
+  background: #cf9861;
+  color: #25201a;
+}
+
+.balance-card .stat-label,
+.balance-card .stat-note,
+.balance-card .positive {
+  color: #30251b;
+}
+
+.primary {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #29231b;
+  font-weight: bold;
+}
+
+.wallet-address {
+  padding: 0.875rem;
+  border: 0.0625rem dashed #55565a;
+  border-radius: 0.625rem;
+  background: #212224;
+  color: #c6c6c8;
+  word-break: break-all;
+  font-size: 0.8125rem;
+}
+
+.qr {
+  width: 5.75rem;
+  height: 5.75rem;
+  margin: 0 auto 0.8125rem;
+  border: 0.4375rem solid white;
+  border-radius: 0.25rem;
+  background: repeating-conic-gradient(#222 0 25%, #eee 0 50%) 0 / 0.75rem
+    0.75rem;
+}
+
+.address-box {
+  text-align: center;
+}
+
+.staking-rate {
+  margin-left: auto;
+  text-align: right;
+}
+
+.staking-rate strong {
+  display: block;
+  color: var(--green);
+}
+
+.tag {
+  padding: 0.3125rem 0.5rem;
+  border-radius: 0.4375rem;
+  background: #254236;
+  color: var(--green);
+  font-size: 0.6875rem;
+}
+
+/* PAGE: Markets — coin table, filters, and market sentiment */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 40.625rem;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 0.8125rem 0.625rem;
+  border-bottom: 0.0625rem solid var(--border);
+  color: #858588;
+  text-align: left;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04375rem;
+}
+
+td {
+  padding: 0.875rem 0.625rem;
+  border-bottom: 0.0625rem solid var(--border);
+  font-size: 0.875rem;
+}
+
+td:first-child,
+th:first-child {
+  padding-left: 0.25rem;
+}
+
+.coin-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.coin-cell small {
+  display: block;
+  margin-top: 0.1875rem;
+  color: var(--muted);
+}
+
+.star {
+  padding: 0.3125rem;
+  border: 0;
+  background: none;
+  color: var(--gold);
+  font-size: 1.125rem;
+}
+
+.market-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4375rem;
+  margin: 1.125rem 0;
+}
+
+.market-filter a {
+  padding: 0.5rem 0.8125rem;
+  border-radius: 0.5625rem;
+  background: #303133;
+  color: #aaa;
+  font-size: 0.8125rem;
+}
+
+.market-filter .selected {
+  background: var(--gold);
+  color: #29231b;
+}
+
+.fear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 0.75rem;
+}
+
+.fear-meter {
+  position: relative;
+  width: min(100%, 27.5rem);
+  height: 0.875rem;
+  margin: 0.9375rem auto;
+  border-radius: 1.25rem;
+  background: linear-gradient(90deg, #df6572, #efb861, #52c78c);
+}
+
+.fear-meter::after {
+  position: absolute;
+  top: -0.3125rem;
+  left: 68%;
+  width: 0.3125rem;
+  height: 1.5625rem;
+  border-radius: 0.3125rem;
+  background: white;
+  content: "";
+}
+
+.fear-labels {
+  justify-content: space-between;
+}
+
+.fear-value {
+  text-align: center;
+}
+
+.fear-number {
+  font-size: 2.625rem;
+  font-weight: bold;
+}
+
+/* PAGE: Settings — profile, forms, tabs, and option panels */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.0625rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.625rem;
+}
+
+.profile-email {
+  margin: 0.25rem 0;
+}
+
+.settings-section h2.danger-heading {
+  margin-top: 1.625rem;
+}
+
+.settings-section h2.api-heading {
+  margin-top: 1.75rem;
+}
+
+.profile .avatar {
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.25rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.375rem;
+  overflow-x: auto;
+  margin-bottom: 1.1875rem;
+}
+
+.tabs a {
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5625rem;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+.tabs a:hover,
+.tabs a.active {
+  background: #373330;
+  color: var(--gold);
+}
+
+.settings-section {
+  display: none;
+}
+
+.settings-section:target,
+.settings-section.default {
+  display: block;
+}
+
+body:has(.settings-section:target) .settings-section.default {
+  display: none;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid var(--border);
+}
+
+.setting-item:last-child {
+  @media (max-width: 47.5rem) {
+    #connected .setting-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    #connected .setting-item > .row {
+      min-width: 0;
+    }
+
+    #connected .setting-item > button {
+      margin: 0;
+      justify-self: end;
+    }
+  }
+
+  border: 0;
+}
+
+.setting-copy strong {
+  display: block;
+  margin-bottom: 0.3125rem;
+}
+
+.setting-copy span {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5625rem;
+  margin-top: 1.125rem;
+}
+
+.danger {
+  border-color: #744144;
+  color: var(--red);
+}
+
+.connected-icon {
+  display: grid;
+  width: 2.375rem;
+  height: 2.375rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  background: #393a3c;
+  font-size: 1.25rem;
+}
+
+.settings-section h2 {
+  margin-bottom: 0.3125rem;
+}
+
+.settings-section > p {
+  margin: 0 0 1.0625rem;
+  color: var(--muted);
+}
+
+/* PAGES: Login and Sign Up — authentication layouts and forms */
+.auth-page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr;
+}
+
+.auth-aside {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 9vh 8vw;
+  background: #171819;
+}
+
+.auth-aside::after {
+  position: absolute;
+  right: -11.25rem;
+  bottom: -10rem;
+  width: 28.125rem;
+  height: 28.125rem;
+  border: 0.0625rem solid #333;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2.8125rem #1a1b1c,
+    0 0 0 2.875rem #333,
+    0 0 0 5.9375rem #1a1b1c,
+    0 0 0 6rem #333;
+  content: "";
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.375rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.auth-aside h1 {
+  max-width: 28.125rem;
+  font-size: 2.375rem;
+  line-height: 1.15;
+}
+
+.auth-aside p {
+  max-width: 25.625rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.auth-main {
+  display: grid;
+  place-items: center;
+  padding: 2.1875rem;
+}
+
+.auth-box {
+  width: min(100%, 27.5rem);
+}
+
+.theme-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5625rem;
+  color: #aaa;
+}
+
+.auth-box h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.875rem;
+}
+
+.auth-box > p,
+.auth-panel > p {
+  margin: 0 0 1.5625rem;
+  color: var(--muted);
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.375rem;
+  padding: 0.25rem;
+  border-radius: 0.625rem;
+  background: #292a2c;
+}
+
+.auth-tabs a {
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  color: #aaa;
+  text-align: center;
+}
+
+.auth-tabs .active {
+  background: #414143;
+  color: var(--text);
+}
+
+/* Combined Login / Sign Up page: show one form section at a time */
+.auth-panel {
+  display: none;
+}
+
+.auth-panel.default,
+.auth-panel:target {
+  display: block;
+}
+
+body:has(.auth-panel:target) .auth-panel.default {
+  display: none;
+}
+
+.auth-page:has(#login:target) .auth-tabs a[href="#login"],
+.auth-page:has(#signup:target) .auth-tabs a[href="#signup"],
+.auth-page:not(:has(.auth-panel:target)) .auth-tabs a[href="#login"] {
+  background: #414143;
+  color: var(--text);
+}
+
+.auth-page:has(#login:target) .auth-tabs a[href="#signup"],
+.auth-page:has(#signup:target) .auth-tabs a[href="#login"] {
+  background: transparent;
+  color: #aaa;
+}
+
+.auth-box .field {
+  margin-bottom: 1.0625rem;
+}
+
+.auth-box input {
+  width: 100%;
+}
+
+.checkline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1.125rem;
+  color: #b9b9bb;
+  font-size: 0.8125rem;
+}
+
+.checkline input {
+  width: auto;
+  accent-color: var(--gold);
+}
+
+.auth-submit {
+  width: 100%;
+  margin: 0.1875rem 0 1.125rem;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  color: #89898c;
+  font-size: 0.75rem;
+}
+
+.separator::before,
+.separator::after {
+  flex: 1;
+  height: 0.0625rem;
+  background: var(--border);
+  content: "";
+}
+
+.social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.social button {
+  width: 100%;
+}
+
+.auth-foot {
+  margin-top: 1.25rem;
+  color: #aaa;
+  text-align: center;
+  font-size: 0.8125rem;
+}
+
+.auth-foot a,
+.forgot {
+  color: var(--gold);
+}
+
+footer {
+  margin-top: 0.75rem;
+  padding: 0.8125rem;
+  color: #77787a;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+footer a {
+  color: #aaa;
+}
+
+/* RESPONSIVE*/
+@media (max-width: 68.75rem) {
+  .main {
+    width: calc(100% - 13.75rem);
+    margin-left: 13.75rem;
+    padding: 1.6875rem 1.5rem;
+  }
+
+  .sidebar {
+    width: 13.75rem;
+  }
+
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-stats > .card,
+  .dashboard-prices > .card,
+  .dashboard-summary > .card,
+  .grid > .card {
+    margin-bottom: 0;
+    padding: 1.125rem;
+  }
+
+  .stat {
+    gap: 0.625rem;
+  }
+
+  .stat-icon {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .price-sparkline {
+    flex-basis: 28%;
+    width: 28%;
+    min-width: 3.125rem;
+  }
+
+  .price-value {
+    font-size: 1.375rem;
+  }
+
+  .price-change {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .dashboard-prices {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 52.625rem) {
+  .sidebar {
+    display: none;
+  }
+
+  .brand {
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 0;
+  }
+
+  .brand-mark {
+    flex: 0 0 2.6875rem;
+    font-size: 1rem;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-link {
+    justify-content: center;
+    gap: 0;
+    padding: 0.875rem 0.4rem;
+    font-size: 0;
+  }
+
+  .nav-link .ico {
+    width: auto;
+    font-size: 1.2rem;
+  }
+
+  .side-bottom {
+    display: block;
+  }
+
+  .mode {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+  }
+
+  .mode > span:not(.mode-icon) {
+    display: none;
+  }
+
+  .mode .switch {
+    margin-left: 0;
+  }
+
+  .logout {
+    margin: 0.5rem 0 0;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 0;
+  }
+
+  .logout::before {
+    content: "↪";
+    font-size: 1.125rem;
+  }
+
+  .main {
+    width: 100%;
+    margin: 0;
+    padding: 1.1875rem 1rem 1.75rem;
+  }
+
+  .mobile-menu {
+    display: inline-flex;
+    margin-bottom: 1.125rem;
+    align-items: center;
+    gap: 0.5rem;
+    width: auto;
+    height: auto;
+  }
+
+  .mobile-settings {
+    display: inline-flex;
+    min-height: 2.875rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.75rem;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.625rem;
+    background: var(--card);
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .mobile-menu summary {
+    display: grid;
+    width: 2.875rem;
+    height: 2.875rem;
+    place-items: center;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.625rem;
+    background: var(--card);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu nav {
+    position: absolute;
+    z-index: 8;
+    top: 4.5rem;
+    left: 1rem;
+    min-width: 13.125rem;
+    padding: 0.5rem;
+    border: 0.0625rem solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--card);
+  }
+
+  .mobile-menu nav a {
+    display: block;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: #c9c9ca;
+  }
+
+  .mobile-menu nav a:hover {
+    background: #393a3c;
+    color: var(--gold);
+  }
+
+  .page-head {
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-head h1 {
+    font-size: 1.6875rem;
+  }
+
+  .head-actions {
+    margin-top: 1.25rem;
+  }
+
+  .head-actions .search {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  .head-actions {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .profile-summary {
+    flex-basis: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 0.6rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-stats,
+  .dashboard-prices,
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card {
+    min-height: 9rem;
+  }
+
+  .price-value {
+    font-size: 1.5rem;
+  }
+
+  .allocation-layout {
+    grid-template-columns: minmax(0, 6.5rem) minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .donut {
+    width: 6.5rem;
+    height: 6.5rem;
+    margin: 0.25rem auto;
+  }
+
+  .donut::after {
+    inset: 1.1875rem;
+  }
+
+  .donut span {
+    padding-top: 2.75rem;
+    font-size: 0.6875rem;
+  }
+
+  .legend-row {
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .legend-color {
+    flex: 0 0 0.5625rem;
+  }
+
+  .legend-row strong {
+    flex: 0 0 auto;
+  }
+
+  .wallet-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+    padding: 1.1875rem;
+  }
+
+  .perf-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .wallet-actions button {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+  }
+
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-aside {
+    display: none;
+  }
+
+  .auth-main {
+    min-height: 100vh;
+    padding: 1.5625rem 1.3125rem;
+  }
+
+  .auth-box {
+    max-width: 26.875rem;
+  }
+
+  .fear {
+    display: block;
+    text-align: center;
+  }
+
+  .tx {
+    gap: 0.5625rem;
+  }
+
+  .tx-amount {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 23rem) {
+  .allocation-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.wallet-row .asset-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* SETTINGS PAGE: highlight the selected option and its tab */
+.main:has(.settings-section:target) .tabs a.active {
+  background: transparent;
+  color: #aaa;
+}
+
+.main:not(:has(.settings-section:target)) .tabs a[href="settings.html"],
+.main:has(#security:target) .tabs a[href="#security"],
+.main:has(#notifications:target) .tabs a[href="#notifications"],
+.main:has(#preferences:target) .tabs a[href="#preferences"],
+.main:has(#connected:target) .tabs a[href="#connected"] {
+  background: #373330;
+  color: var(--gold);
+}
+
+@media (max-width: 23rem) {
+  .price-sparkline {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: 8rem;
+  }
+}
+
+/* LIGHT MODE: use light colors when the switch is turned on */
+body:has(.mode input:checked) {
+  --background: #f4f6f8;
+  --sidebar: #ffffff;
+  --card: #ffffff;
+  --border: #d8dce1;
+  --text: #25282d;
+  --muted: #626873;
+  --gold: #b87528;
+  --green: #16825c;
+  --red: #c63d49;
+}
+
+body:has(.mode input:checked) button,
+body:has(.mode input:checked) .button {
+  background: #f0f2f5;
+  color: var(--text);
+}
+
+body:has(.mode input:checked) input,
+body:has(.mode input:checked) select,
+body:has(.mode input:checked) textarea {
+  background: #ffffff;
+  color: var(--text);
+}
+
+body:has(.mode input:checked) .switch {
+  background: #a0a5ae;
+}
+
+body:has(.mode input:checked) .switch:checked {
+  background: var(--gold);
+}
+
+body:has(.mode input:checked) .sidebar,
+body:has(.mode input:checked) .mode,
+body:has(.mode input:checked) .side-user {
+  border-color: var(--border);
+}
+
+body:has(.mode input:checked) .mode,
+body:has(.mode input:checked) .side-user,
+body:has(.mode input:checked) .nav-link,
+body:has(.mode input:checked) .tabs a,
+body:has(.mode input:checked) .market-filter a {
+  color: #555b64;
+}
+
+body:has(.mode input:checked) .card,
+body:has(.mode input:checked) .perf,
+body:has(.mode input:checked) .market-filter a,
+body:has(.mode input:checked) .auth-tabs {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+body:has(.mode input:checked) .coin-dot,
+body:has(.mode input:checked) .tx-icon,
+body:has(.mode input:checked) .connected-icon,
+body:has(.mode input:checked) .auth-tabs .active,
+body:has(.mode input:checked) .tabs a.active {
+  background: #e9edf2;
+}
+
+body:has(.mode input:checked) .legend-row,
+body:has(.mode input:checked) .wallet-address {
+  color: var(--text);
+}
+
+body:has(.mode input:checked) .wallet-address {
+  border-color: var(--border);
+  background: #f7f8fa;
+}
+
+body:has(.mode input:checked) .mobile-menu nav a {
+  color: var(--text);
+}
+
+body:has(.mode input:checked) .mobile-menu nav a:hover {
+  background: #e9edf2;
+}
+
+body:has(.mode input:checked) .auth-aside {
+  background: #e9edf2;
+}
+
+@media (max-width: 52.625rem) {
+  #connected .setting-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  #connected .setting-item > .row {
+    min-width: 0;
+  }
+
+  #connected .setting-item > button {
+    margin: 0;
+    justify-self: end;
+  }
+}
+
+/* Keep the dashboard profile name visible on narrow screens */
+@media (max-width: 47.5rem) {
+  .profile-summary {
+    white-space: normal;
+  }
+
+  .profile-summary > span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}

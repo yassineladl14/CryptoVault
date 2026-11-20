@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Markets - CryptoVault</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <a class="brand" href="dashboard.html"><span class="brand-mark">CV</span>CryptoVault</a>
+            <div class="nav-group">
+                <div class="nav-label">MAIN MENU</div>
+                <a class="nav-link" href="dashboard.html"><span class="ico">▦</span>Dashboard</a><a
+                    class="nav-link active" href="markets.html"><span class="ico">⌁</span>Markets</a><a class="nav-link"
+                    href="wallet.html"><span class="ico">▣</span>Wallet</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-label">ACCOUNT</div>
+                <a class="nav-link" href="settings.html"><span class="ico">⚙</span>Settings</a>
+            </div>
+            <div class="side-bottom">
+                <div class="mode">
+                    <span class="mode-icon">☼</span><span>Light Mode</span><input class="switch" type="checkbox"
+                        aria-label="Light Mode" />
+                </div>
+                <a class="logout" href="auth.html#login">↪ &nbsp; Logout</a>
+            </div>
+        </aside>
+        <!-- PAGE CONTENT STARTS HERE -->
+        <main class="main">
+            <details class="mobile-menu">
+                <summary aria-label="Toggle menu">☰</summary>
+                <a class="mobile-settings" href="settings.html" aria-label="Settings">Settings</a>
+                <nav>
+                    <a href="dashboard.html">▦ Dashboard</a><a href="markets.html">⌁ Markets</a><a href="wallet.html">▣
+                        Wallet</a><a href="settings.html">⚙ Settings</a><a href="auth.html#login">↪ Logout</a>
+                </nav>
+            </details>
+            <header class="page-head">
+                <div>
+                    <h1>Markets</h1>
+                    <p>Live cryptocurrency prices and market data</p>
+                </div>
+                <div class="head-actions">
+                    <input class="search" type="search" placeholder="⌕  Search..." /><button class="icon-btn"
+                        aria-label="Notifications">
+                        ♧<span class="badge">3</span></button><span class="avatar">AM</span>
+                </div>
+            </header>
+            <section class="grid grid-4">
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">◈</span>
+                        <div>
+                            <div class="stat-label">Total Market Cap</div>
+                            <div class="stat-value">$2.48T</div>
+                            <div class="stat-note positive">↗ +2.4%</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">⇄</span>
+                        <div>
+                            <div class="stat-label">24h Volume</div>
+                            <div class="stat-value">$84.2B</div>
+                            <div class="stat-note positive">↗ +5.8%</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">₿</span>
+                        <div>
+                            <div class="stat-label">BTC Dominance</div>
+                            <div class="stat-value">52.4%</div>
+                            <div class="stat-note negative">↘ -0.3%</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">▦</span>
+                        <div>
+                            <div class="stat-label">Active Cryptos</div>
+                            <div class="stat-value">12,847</div>
+                            <div class="stat-note positive">+24</div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <article class="card market-table-card">
+                <div class="card-head">
+                    <h2>Cryptocurrency Prices</h2>
+                    <input class="search" id="searchInput" type="search" placeholder="⌕  Search coins..." />
+                </div>
+                <nav class="market-filter">
+                    <a class="selected" href="markets.html">All</a><a href="#favorites">Favorites</a><a
+                        href="#defi">DeFi</a><a href="#nft">NFT</a><a href="#layer1">Layer 1</a>
+                </nav>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>COIN</th>
+                                <th>PRICE</th>
+                                <th>24H</th>
+                                <th>MARKET CAP</th>
+                                <th>VOLUME (24H)</th>
+                                <th>LAST 7 DAYS</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="coin-cell">
+                                        <span class="coin-dot">₿</span>
+                                        <div>Bitcoin<small>BTC</small></div>
+                                    </div>
+                                </td>
+                                <td>$43,256.00</td>
+                                <td class="positive">+2.34%</td>
+                                <td>$847.2B</td>
+                                <td>$24.8B</td>
+                                <td class="positive">╱╲╱╱╲╱</td>
+                                <td>
+                                    <button class="star" aria-label="Favorite Bitcoin">
+                                        ★
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="coin-cell">
+                                        <span class="coin-dot">Ξ</span>
+                                        <div>Ethereum<small>ETH</small></div>
+                                    </div>
+                                </td>
+                                <td>$2,284.50</td>
+                                <td class="positive">+1.87%</td>
+                                <td>$274.5B</td>
+                                <td>$12.3B</td>
+                                <td class="positive">╱╲╱╲╱</td>
+                                <td>
+                                    <button class="star" aria-label="Favorite Ethereum">
+                                        ★
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="coin-cell">
+                                        <span class="coin-dot">₮</span>
+                                        <div>Tether<small>USDT</small></div>
+                                    </div>
+                                </td>
+                                <td>$1.00</td>
+                                <td class="positive">+0.01%</td>
+                                <td>$95.8B</td>
+                                <td>$42.1B</td>
+                                <td class="positive">━╱━╲━</td>
+                                <td>
+                                    <button class="star" aria-label="Favorite Tether">☆</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="coin-cell">
+                                        <span class="coin-dot">B</span>
+                                        <div>BNB<small>BNB</small></div>
+                                    </div>
+                                </td>
+                                <td>$312.45</td>
+                                <td class="negative">-0.56%</td>
+                                <td>$48.1B</td>
+                                <td>$1.2B</td>
+                                <td class="negative">╲╱╲╲╱</td>
+                                <td>
+                                    <button class="star" aria-label="Favorite BNB">☆</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <div class="coin-cell">
+                                        <span class="coin-dot">◎</span>
+                                        <div>Solana<small>SOL</small></div>
+                                    </div>
+                                </td>
+                                <td>$98.42</td>
+                                <td class="positive">+12.40%</td>
+                                <td>$42.7B</td>
+                                <td>$3.8B</td>
+                                <td class="positive">╱╱╲╱╱</td>
+                                <td>
+                                    <button class="star" aria-label="Favorite Solana">★</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            <section class="grid grid-2">
+                <article class="card">
+                    <div class="card-head">
+                        <h2>Trending</h2>
+                        <span class="muted small">24 hours</span>
+                    </div>
+                    <div class="wallet-list">
+                        <div class="wallet-row">
+                            <b>1</b><span class="coin-dot">Ð</span>
+                            <div class="asset-name">
+                                <strong>Dogecoin <small>DOGE</small></strong>
+                            </div>
+                            <span class="positive">+8.45%</span>
+                        </div>
+                        <div class="wallet-row">
+                            <b>2</b><span class="coin-dot">◎</span>
+                            <div class="asset-name">
+                                <strong>Solana <small>SOL</small></strong>
+                            </div>
+                            <span class="positive">+5.67%</span>
+                        </div>
+                        <div class="wallet-row">
+                            <b>3</b><span class="coin-dot">●</span>
+                            <div class="asset-name">
+                                <strong>Polkadot <small>DOT</small></strong>
+                            </div>
+                            <span class="positive">+4.21%</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-head">
+                        <h2>Fear &amp; Greed Index</h2>
+                    </div>
+                    <div class="fear">
+                        <div>
+                            <div class="small muted">Extreme Fear</div>
+                            <div class="fear-meter"></div>
+                            <div class="row fear-labels">
+                                <span class="small muted">Fear</span><span class="small muted">Neutral</span><span
+                                    class="small muted">Extreme Greed</span>
+                            </div>
+                        </div>
+                        <div class="fear-value">
+                            <div class="fear-number">68</div>
+                            <div class="accent">Greed</div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <footer>
+                Copyright © 2026 CryptoVault. Designed by <a href="#">TemplateMo</a>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

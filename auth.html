@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Account - CryptoVault</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="auth-page">
+        <aside class="auth-aside">
+            <a href="dashboard.html" class="auth-brand"><span class="brand-mark">CV</span>CryptoVault</a>
+            <h1>Your secure gateway to the world of cryptocurrency trading</h1>
+            <p>
+                Manage your portfolio, track market movements, and trade with
+                confidence through CryptoVault.
+            </p>
+        </aside>
+
+        <!-- LOGIN AND SIGN UP PAGE -->
+        <main class="auth-main">
+            <section class="auth-box">
+                <div class="theme-link"><a href="#theme">◐ &nbsp;Dark mode</a></div>
+                <nav class="auth-tabs" aria-label="Account options">
+                    <a href="#login">Sign In</a>
+                    <a href="#signup">Sign Up</a>
+                </nav>
+
+                <section id="login" class="auth-panel default">
+                    <h2>Welcome Back</h2>
+                    <p>Enter your credentials to access your account</p>
+                    <form action="#" method="get">
+                        <div class="field">
+                            <label for="login-email">Email Address</label><input id="login-email" type="email"
+                                placeholder="name@example.com" required />
+                        </div>
+                        <div class="field">
+                            <label for="login-password">Password</label><input id="login-password" type="password"
+                                placeholder="Enter your password" required />
+                        </div>
+                        <div class="row row-between">
+                            <label class="checkline"><input type="checkbox" /> Remember me</label><a class="forgot"
+                                href="#forgot">Forgot password?</a>
+                        </div>
+                        <button class="primary auth-submit" type="submit">Sign In</button>
+                    </form>
+                    <div class="separator">or continue with</div>
+                    <div class="social">
+                        <button type="button">◉ &nbsp;Google</button><button type="button">● &nbsp;Apple</button>
+                    </div>
+                    <div class="auth-foot">
+                        Don't have an account? <a href="#signup">Sign up for free</a>
+                    </div>
+                </section>
+
+                <section id="signup" class="auth-panel">
+                    <h2>Create Account</h2>
+                    <p>Start your crypto journey today</p>
+                    <form action="#" method="get">
+                        <div class="field">
+                            <label for="signup-name">Full Name</label><input id="signup-name" type="text"
+                                placeholder="Your name" required />
+                        </div>
+                        <div class="field">
+                            <label for="signup-email">Email Address</label><input id="signup-email" type="email"
+                                placeholder="name@example.com" required />
+                        </div>
+                        <div class="field">
+                            <label for="signup-password">Password</label><input id="signup-password" type="password"
+                                placeholder="Create a password" minlength="8" required />
+                        </div>
+                        <div class="field">
+                            <label for="confirm-password">Confirm Password</label><input id="confirm-password"
+                                type="password" placeholder="Enter your password again" minlength="8" required />
+                        </div>
+                        <label class="checkline"><input type="checkbox" required /> I agree to the
+                            <span class="accent">Terms of Service</span> and
+                            <span class="accent">Privacy Policy</span></label>
+                        <button class="primary auth-submit" type="submit">Sign Up</button>
+                    </form>
+                    <div class="separator">or continue with</div>
+                    <div class="social">
+                        <button type="button">◉ &nbsp;Google</button><button type="button">● &nbsp;Apple</button>
+                    </div>
+                    <div class="auth-foot">
+                        Already have an account? <a href="#login">Sign in</a>
+                    </div>
+                </section>
+
+                <footer>
+                    Copyright © 2026 CryptoVault. Designed by <a href="#">TemplateMo</a>
+                </footer>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

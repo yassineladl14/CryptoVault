@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard - CryptoVault</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <a class="brand" href="dashboard.html">
+                <span class="brand-mark">CV</span>
+                CryptoVault
+            </a>
+
+            <div class="nav-group">
+                <div class="nav-label">MAIN MENU</div>
+                <a class="nav-link active" href="dashboard.html"><span class="ico">▦</span>Dashboard</a>
+                <a class="nav-link" href="markets.html"><span class="ico">⌁</span>Markets</a>
+                <a class="nav-link" href="wallet.html"><span class="ico">▣</span>Wallet</a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-label">ACCOUNT</div>
+                <a class="nav-link" href="settings.html"><span class="ico">⚙</span>Settings</a>
+            </div>
+
+            <div class="side-bottom">
+                <div class="mode">
+                    <span class="mode-icon">☼</span>
+                    <span>Light Mode</span>
+                    <input class="switch" type="checkbox" aria-label="Light Mode" />
+                </div>
+                <a class="logout" href="auth.html#login">↪ &nbsp; Logout</a>
+            </div>
+        </aside>
+
+        <!-- PAGE CONTENT STARTS HERE -->
+        <main class="main">
+            <details class="mobile-menu">
+                <summary aria-label="Open navigation">☰</summary>
+                <a class="mobile-settings" href="settings.html" aria-label="Settings">Settings</a>
+                <nav>
+                    <a href="dashboard.html">▦ Dashboard</a>
+                    <a href="markets.html">⌁ Markets</a>
+                    <a href="wallet.html">▣ Wallet</a>
+                    <a href="settings.html">⚙ Settings</a>
+                    <a href="auth.html#login">↪ Logout</a>
+                </nav>
+            </details>
+
+            <header class="page-head">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's your portfolio overview.</p>
+                </div>
+
+                <div class="head-actions">
+                    <input class="search" type="search" placeholder="⌕  Search..." aria-label="Search" />
+                    <button class="icon-btn" type="button" aria-label="Notifications">
+                        ♧<span class="badge">3</span>
+                    </button>
+                    <div class="profile-summary">
+                        <span class="avatar">AM</span>
+                        <span>Alex Morgan</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="dashboard-stats" aria-label="Portfolio statistics">
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">◈</span>
+                        <div>
+                            <div class="stat-label">Total Balance</div>
+                            <div class="stat-value">$84,254.32</div>
+                            <div class="stat-note positive">+12.5% this month</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">↗</span>
+                        <div>
+                            <div class="stat-label">Total Profit</div>
+                            <div class="stat-value">$12,847.00</div>
+                            <div class="stat-note positive">+8.2% this week</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">◷</span>
+                        <div>
+                            <div class="stat-label">Pending Orders</div>
+                            <div class="stat-value">7</div>
+                            <div class="stat-note muted">3 buy, 4 sell</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="stat">
+                        <span class="stat-icon">▣</span>
+                        <div>
+                            <div class="stat-label">Active Assets</div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-note muted">Across 4 wallets</div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="dashboard-prices" aria-label="Cryptocurrency prices">
+                <article class="card price-card">
+                    <div class="price-info">
+                        <div class="price-title">
+                            <span class="coin-dot">₿</span>BTC/USD
+                        </div>
+                        <div class="price-value">$43,256.00</div>
+                        <div class="price-change positive">+2.34%</div>
+                    </div>
+                    <svg class="price-sparkline" viewBox="0 0 180 50" role="img" aria-label="Bitcoin price trend">
+                        <g stroke="#829687" stroke-width="2">
+                            <path
+                                d="M12 42V18M32 44V12M52 40V20M72 38V10M92 46V16M112 42V14M132 36V8M152 44V17M172 39V11" />
+                        </g>
+                        <g fill="#6e9b77">
+                            <path
+                                d="M9 27h7v9h-7zM29 20h7v12h-7zM49 27h7v8h-7zM69 17h7v12h-7zM89 24h7v14h-7zM109 22h7v10h-7zM129 15h7v13h-7zM149 24h7v12h-7zM169 16h7v11h-7z" />
+                        </g>
+                    </svg>
+                </article>
+
+                <article class="card price-card">
+                    <div class="price-info">
+                        <div class="price-title">
+                            <span class="coin-dot">Ξ</span>ETH/USD
+                        </div>
+                        <div class="price-value">$2,284.50</div>
+                        <div class="price-change positive">+1.87%</div>
+                    </div>
+                    <svg class="price-sparkline" viewBox="0 0 180 50" role="img" aria-label="Ethereum price trend">
+                        <g stroke="#829687" stroke-width="2">
+                            <path
+                                d="M12 42V17M32 39V11M52 45V20M72 40V13M92 34V8M112 43V17M132 37V10M152 42V14M172 32V5" />
+                        </g>
+                        <g fill="#6e9b77">
+                            <path
+                                d="M9 25h7v10h-7zM29 17h7v12h-7zM49 28h7v9h-7zM69 20h7v12h-7zM89 14h7v12h-7zM109 25h7v10h-7zM129 17h7v12h-7zM149 20h7v12h-7zM169 12h7v13h-7z" />
+                        </g>
+                    </svg>
+                </article>
+            </section>
+
+            <section class="dashboard-summary" aria-label="Portfolio summary">
+                <article class="card summary-card">
+                    <h2>Asset Allocation</h2>
+                    <div class="allocation-layout">
+                        <div class="donut"><span>Portfolio</span></div>
+                        <div class="legend">
+                            <div class="legend-row">
+                                <i class="legend-color"></i>Bitcoin <strong>40%</strong>
+                            </div>
+                            <div class="legend-row">
+                                <i class="legend-color purple"></i>Ethereum
+                                <strong>25%</strong>
+                            </div>
+                            <div class="legend-row">
+                                <i class="legend-color teal"></i>Other <strong>35%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card summary-card">
+                    <h2>Portfolio Health</h2>
+                    <div class="summary-meter">
+                        <div class="health-ring"><span>85%</span></div>
+                        <div>
+                            <strong>Excellent</strong>
+                            <p class="muted">Your portfolio is well diversified.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card summary-card">
+                    <h2>Risk Level</h2>
+                    <div class="summary-meter">
+                        <div class="risk-ring"><span>35%</span></div>
+                        <div>
+                            <strong>Moderate</strong>
+                            <p class="muted">Balanced risk profile.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <footer>
+                Copyright © 2026 CryptoVault. Designed by <a href="#">TemplateMo</a>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

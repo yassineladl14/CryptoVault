@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Settings - CryptoVault</title>
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+    <div class="shell">
+        <aside class="sidebar">
+            <a class="brand" href="dashboard.html"><span class="brand-mark">CV</span>CryptoVault</a>
+            <div class="nav-group">
+                <div class="nav-label">MAIN MENU</div>
+                <a class="nav-link" href="dashboard.html"><span class="ico">▦</span>Dashboard</a><a class="nav-link"
+                    href="markets.html"><span class="ico">⌁</span>Markets</a><a class="nav-link"
+                    href="wallet.html"><span class="ico">▣</span>Wallet</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-label">ACCOUNT</div>
+                <a class="nav-link active" href="settings.html"><span class="ico">⚙</span>Settings</a>
+            </div>
+            <div class="side-bottom">
+                <div class="mode">
+                    <span class="mode-icon">☼</span><span>Light Mode</span><input class="switch" type="checkbox"
+                        aria-label="Light Mode" />
+                </div>
+                <a class="logout" href="auth.html#login">↪ &nbsp; Logout</a>
+            </div>
+        </aside>
+        <main class="main">
+            <details class="mobile-menu">
+                <nav>
+                    <a href="dashboard.html">▦ Dashboard</a><a href="markets.html">⌁ Markets</a><a href="wallet.html">▣
+                        Wallet</a><a href="settings.html">Settings</a><a href="auth.html#login">↪ Logout</a>
+                </nav>
+            </details>
+            <header class="page-head">
+                <div>
+                    <h1>Settings</h1>
+                    <p>Manage your account preferences and security</p>
+                </div>
+                <div class="head-actions">
+                    <input class="search" type="search" placeholder="⌕  Search..." aria-label="Search" /><button
+                        class="icon-btn" type="button" aria-label="Notifications">
+                        ♧<span class="badge">3</span>
+                    </button>
+                    <div class="profile-summary">
+                        <span class="avatar">AM</span><span>Alex Morgan</span>
+                    </div>
+                </div>
+            </header>
+            <nav class="tabs">
+                <a class="active" href="settings.html">Profile</a><a href="#security">Security</a><a
+                    href="#notifications">Notifications</a><a href="#preferences">Preferences</a><a
+                    href="#connected">Connected</a>
+            </nav>
+            <article class="card settings-section default">
+                <div class="profile">
+                    <span class="avatar">AM</span>
+                    <div>
+                        <h2>Alex Morgan</h2>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="first">First Name</label><input id="first" value="Alex" />
+                        </div>
+                        <div class="field">
+                            <label for="last">Last Name</label><input id="last" value="Morgan" />
+                        </div>
+                        <div class="field">
+                            <label for="email">Email Address</label><input id="email" type="email"
+                                value="alex.morgan@email.com" />
+                        </div>
+                    </div>
+                    <div class="inline-actions">
+                        <button class="primary" type="button">Save Changes</button><button type="reset">Cancel</button>
+                    </div>
+                </form>
+            </article>
+            <article id="security" class="card settings-section">
+                <h2>Security Settings</h2>
+                <p>Manage your account security and authentication methods</p>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Password</strong><span>Last changed 30 days ago</span>
+                    </div>
+                    <a class="button" href="#security">Change Password</a>
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Two-Factor Authentication</strong><span>Enabled via Authenticator App</span>
+                    </div>
+                    <button>Manage</button>
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Biometric Login</strong><span>Not configured</span>
+                    </div>
+                    <button>Enable</button>
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Active Sessions</strong><span>3 devices currently logged in</span>
+                    </div>
+                    <button>View All</button>
+                </div>
+                <h2 class="danger-heading">Danger Zone</h2>
+                <p>Irreversible actions for your account</p>
+                <div class="inline-actions">
+                    <button class="danger">Delete Account</button><button>Export All Data</button>
+                </div>
+            </article>
+            <article id="notifications" class="card settings-section">
+                <h2>Notification Preferences</h2>
+                <p>Choose how you want to receive updates</p>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Price Alerts</strong><span>Get notified when prices hit your targets</span>
+                    </div>
+                    <input class="switch" type="checkbox" checked aria-label="Price Alerts" />
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Transaction Updates</strong><span>Receive alerts for deposits, withdrawals, and
+                            trades</span>
+                    </div>
+                    <input class="switch" type="checkbox" checked aria-label="Transaction Updates" />
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Security Alerts</strong><span>Important security notifications and login alerts</span>
+                    </div>
+                    <input class="switch" type="checkbox" checked aria-label="Security Alerts" />
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Weekly Report</strong><span>Portfolio performance summary every week</span>
+                    </div>
+                    <input class="switch" type="checkbox" checked aria-label="Weekly Report" />
+                </div>
+            </article>
+            <article id="preferences" class="card settings-section">
+                <h2>Display Preferences</h2>
+                <p>Customize how the app looks and behaves</p>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="currency">Currency</label><select id="currency">
+                            <option>USD - US Dollar</option>
+                            <option>EUR - Euro</option>
+                            <option>GBP - British Pound</option>
+                            <option>JPY - Japanese Yen</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="language">Language</label><select id="language">
+                            <option>English</option>
+                            <option>Spanish</option>
+                            <option>French</option>
+                            <option>German</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="timezone">Timezone</label><select id="timezone">
+                            <option>Eastern Time (ET)</option>
+                            <option>Pacific Time (PT)</option>
+                            <option>UTC</option>
+                            <option>GMT</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="date">Date Format</label><select id="date">
+                            <option>MM/DD/YYYY</option>
+                            <option>DD/MM/YYYY</option>
+                            <option>YYYY-MM-DD</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Dark Mode</strong><span>Use dark theme for the interface</span>
+                    </div>
+                    <input class="switch" type="checkbox" checked aria-label="Dark Mode" />
+                </div>
+                <div class="setting-item">
+                    <div class="setting-copy">
+                        <strong>Compact View</strong><span>Show more data with smaller elements</span>
+                    </div>
+                    <input class="switch" type="checkbox" aria-label="Compact View" />
+                </div>
+                <div class="inline-actions">
+                    <button class="primary">Save Preferences</button><button type="reset">Reset to Default</button>
+                </div>
+            </article>
+            <article id="connected" class="card settings-section">
+                <h2>Connected Exchanges</h2>
+                <p>Link your exchange accounts for seamless trading</p>
+                <div class="setting-item">
+                    <div class="row">
+                        <span class="connected-icon">🦊</span>
+                        <div class="setting-copy">
+                            <strong>MetaMask</strong><span>Connected • 0x742d...5f83</span>
+                        </div>
+                    </div>
+                    <button>Disconnect</button>
+                </div>
+                <div class="setting-item">
+                    <div class="row">
+                        <span class="connected-icon">B</span>
+                        <div class="setting-copy">
+                            <strong>Binance</strong><span>Not connected</span>
+                        </div>
+                    </div>
+                    <button>Connect</button>
+                </div>
+                <div class="inline-actions"><button>＋ Add Exchange</button></div>
+                <h2 class="api-heading">API Keys</h2>
+                <p>Manage your API access for third-party integrations</p>
+                <div class="field">
+                    <label for="api">API Key</label><input id="api" value="cv_live_xxxxxxxxxxxxxxxxxxxxxxxx" readonly />
+                </div>
+                <div class="inline-actions">
+                    <button>Regenerate Key</button><button>View Documentation</button>
+                </div>
+            </article>
+            <footer>
+                Copyright © 2026 CryptoVault. Designed by <a href="#">TemplateMo</a>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
